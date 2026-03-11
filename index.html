@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Tools Directory</title>
+  <style>
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Arial,sans-serif;
+      background:linear-gradient(135deg,#0f172a,#1e293b);
+      color:#0f172a;
+      padding:20px;
+    }
+    .container{
+      max-width:1200px;
+      margin:auto;
+      background:#fff;
+      border-radius:18px;
+      padding:24px;
+      box-shadow:0 20px 50px rgba(0,0,0,.25);
+    }
+    h1{
+      text-align:center;
+      margin:0 0 8px;
+      color:#111827;
+    }
+    .subtitle{
+      text-align:center;
+      color:#64748b;
+      margin-bottom:24px;
+    }
+    .stats{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      justify-content:center;
+      margin-bottom:20px;
+    }
+    .stat{
+      background:#eef2ff;
+      color:#312e81;
+      padding:10px 14px;
+      border-radius:10px;
+      font-weight:bold;
+    }
+    .controls{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-bottom:16px;
+    }
+    input, select{
+      padding:10px 12px;
+      border:1px solid #cbd5e1;
+      border-radius:10px;
+      font-size:14px;
+    }
+    input{flex:1; min-width:220px}
+    table{
+      width:100%;
+      border-collapse:collapse;
+      margin-top:10px;
+    }
+    th, td{
+      padding:12px;
+      border-bottom:1px solid #e5e7eb;
+      text-align:left;
+      vertical-align:top;
+    }
+    th{
+      background:#111827;
+      color:#fff;
+    }
+    tr:hover{
+      background:#f8fafc;
+    }
+    .tag{
+      display:inline-block;
+      background:#e0e7ff;
+      color:#3730a3;
+      padding:4px 8px;
+      border-radius:999px;
+      font-size:12px;
+      font-weight:bold;
+      margin:2px 4px 2px 0;
+    }
+    .rank{
+      display:inline-block;
+      min-width:32px;
+      text-align:center;
+      padding:6px 10px;
+      border-radius:999px;
+      color:#fff;
+      font-weight:bold;
+    }
+    .rank-s{background:#dc2626}
+    .rank-a{background:#2563eb}
+    .rank-b{background:#0891b2}
+    .rank-c{background:#64748b}
+    .btn{
+      display:inline-block;
+      background:#4f46e5;
+      color:#fff;
+      text-decoration:none;
+      padding:8px 12px;
+      border-radius:8px;
+      font-weight:bold;
+    }
+    .btn:hover{background:#4338ca}
+    .footer{
+      text-align:center;
+      color:#94a3b8;
+      margin-top:20px;
+      font-size:14px;
+    }
+    @media (max-width: 768px){
+      .container{padding:16px}
+      table{font-size:14px}
+      th, td{padding:10px}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🚀 AI Tools Directory</h1>
+    <p class="subtitle">Versão simples para publicar no GitHub Pages</p>
+
+    <div class="stats">
+      <div class="stat">Ferramentas: <span id="toolCount">0</span></div>
+      <div class="stat">Categorias: <span id="catCount">0</span></div>
+    </div>
+
+    <div class="controls">
+      <input id="search" type="text" placeholder="Buscar ferramenta, empresa, categoria..." oninput="renderTable()">
+      <select id="category" onchange="renderTable()">
+        <option value="">Todas as categorias</option>
+      </select>
+      <select id="rank" onchange="renderTable()">
+        <option value="">Todos os ranks</option>
+        <option value="S">S</option>
+        <option value="A">A</option>
+        <option value="B">B</option>
+        <option value="C">C</option>
+      </select>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Rank</th>
+          <th>Ferramenta</th>
+          <th>Empresa</th>
+          <th>Categorias</th>
+          <th>Descrição</th>
+          <th>Link</th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+
+    <p class="footer">Publicação simples • GitHub Pages</p>
+  </div>
+
+  <script>
+    const tools = [
+      {name:"ChatGPT", company:"OpenAI", cats:["Texto","Código","Pesquisa"], desc:"Assistente multimodal.", rank:"S", url:"https://chatgpt.com"},
+      {name:"Claude", company:"Anthropic", cats:["Texto","Código"], desc:"Ótimo para escrita e análise.", rank:"S", url:"https://claude.ai"},
+      {name:"Gemini", company:"Google", cats:["Texto","Imagem","Vídeo"], desc:"IA multimodal do Google.", rank:"S", url:"https://gemini.google.com"},
+      {name:"Perplexity", company:"Perplexity", cats:["Pesquisa","Texto"], desc:"Busca com IA e referências.", rank:"S", url:"https://www.perplexity.ai"},
+      {name:"Cursor", company:"Anysphere", cats:["Código"], desc:"Editor com IA para programação.", rank:"S", url:"https://cursor.com"},
+      {name:"GitHub Copilot", company:"GitHub", cats:["Código"], desc:"Assistente de código.", rank:"S", url:"https://github.com/features/copilot"},
+      {name:"Midjourney", company:"Midjourney", cats:["Imagem"], desc:"Geração de imagens de alta qualidade.", rank:"S", url:"https://www.midjourney.com"},
+      {name:"Runway", company:"Runway", cats:["Vídeo","Imagem"], desc:"Criação e edição de vídeo com IA.", rank:"S", url:"https://runwayml.com"},
+      {name:"ElevenLabs", company:"ElevenLabs", cats:["Áudio"], desc:"Voz sintética e clonagem vocal.", rank:"S", url:"https://elevenlabs.io"},
+      {name:"n8n", company:"n8n", cats:["Automação","Dev"], desc:"Automação open source.", rank:"S", url:"https://n8n.io"},
+
+      {name:"DeepSeek", company:"DeepSeek", cats:["Texto","Código"], desc:"Raciocínio e programação.", rank:"A", url:"https://chat.deepseek.com"},
+      {name:"Grok", company:"xAI", cats:["Texto","Pesquisa"], desc:"Assistente com busca integrada.", rank:"A", url:"https://grok.com"},
+      {name:"NotebookLM", company:"Google", cats:["Pesquisa","Texto","Áudio"], desc:"Analisa arquivos e fontes.", rank:"A", url:"https://notebooklm.google.com"},
+      {name:"DALL·E 3", company:"OpenAI", cats:["Imagem"], desc:"Geração de imagens por prompt.", rank:"A", url:"https://openai.com/dall-e-3"},
+      {name:"Ideogram", company:"Ideogram", cats:["Imagem"], desc:"Imagens com texto legível.", rank:"A", url:"https://ideogram.ai"},
+      {name:"Adobe Firefly", company:"Adobe", cats:["Imagem","Vídeo"], desc:"IA generativa da Adobe.", rank:"A", url:"https://firefly.adobe.com"},
+      {name:"Pika", company:"Pika Labs", cats:["Vídeo"], desc:"Criação de vídeo com IA.", rank:"A", url:"https://pika.art"},
+      {name:"Kling", company:"Kuaishou", cats:["Vídeo"], desc:"Vídeos realistas com IA.", rank:"A", url:"https://klingai.com"},
+      {name:"Suno", company:"Suno", cats:["Áudio"], desc:"Criação de músicas com IA.", rank:"A", url:"https://suno.com"},
+      {name:"Udio", company:"Udio", cats:["Áudio"], desc:"Geração musical por prompt.", rank:"A", url:"https://www.udio.com"},
+      {name:"Bolt.new", company:"StackBlitz", cats:["Código"], desc:"Cria apps no navegador.", rank:"A", url:"https://bolt.new"},
+      {name:"v0", company:"Vercel", cats:["Código","Imagem"], desc:"Gera interfaces web.", rank:"A", url:"https://v0.dev"},
+      {name:"Lovable", company:"Lovable", cats:["Código"], desc:"Cria apps com linguagem natural.", rank:"A", url:"https://lovable.dev"},
+      {name:"LangChain", company:"LangChain", cats:["Automação","Dev"], desc:"Framework para apps com LLM.", rank:"A", url:"https://www.langchain.com"},
+      {name:"OpenRouter", company:"OpenRouter", cats:["Dev"], desc:"Acesso a vários modelos por uma API.", rank:"A", url:"https://openrouter.ai"},
+      {name:"Ollama", company:"Ollama", cats:["Dev"], desc:"Roda modelos localmente.", rank:"A", url:"https://ollama.com"},
+      {name:"Grammarly", company:"Grammarly", cats:["Escrita","Produtividade"], desc:"Correção e melhoria de texto.", rank:"A", url:"https://www.grammarly.com"},
+      {name:"Notion AI", company:"Notion", cats:["Escrita","Produtividade"], desc:"IA dentro do Notion.", rank:"A", url:"https://www.notion.so/product/ai"},
+      {name:"Otter.ai", company:"Otter", cats:["Produtividade","Áudio"], desc:"Transcrição de reuniões.", rank:"A", url:"https://otter.ai"},
+      {name:"Inception Mercury", company:"Inception Labs", cats:["Código","Dev"], desc:"Tool emergente.", rank:"A", url:"https://inceptionlabs.ai"}
+    ];
+
+    function rankClass(rank){
+      return "rank-" + rank.toLowerCase();
+    }
+
+    function uniqueCategories() {
+      const set = new Set();
+      tools.forEach(t => t.cats.forEach(c => set.add(c)));
+      return [...set].sort();
+    }
+
+    function fillCategories(){
+      const select = document.getElementById("category");
+      uniqueCategories().forEach(cat => {
+        const option = document.createElement("option");
+        option.value = cat;
+        option.textContent = cat;
+        select.appendChild(option);
+      });
+      document.getElementById("catCount").textContent = uniqueCategories().length;
+      document.getElementById("toolCount").textContent = tools.length;
+    }
+
+    function renderTable(){
+      const search = document.getElementById("search").value.toLowerCase();
+      const category = document.getElementById("category").value;
+      const rank = document.getElementById("rank").value;
+      const tbody = document.getElementById("tbody");
+
+      const filtered = tools.filter(tool => {
+        const text = (
+          tool.name + " " +
+          tool.company + " " +
+          tool.desc + " " +
+          tool.cats.join(" ")
+        ).toLowerCase();
+
+        const matchSearch = !search || text.includes(search);
+        const matchCategory = !category || tool.cats.includes(category);
+        const matchRank = !rank || tool.rank === rank;
+
+        return matchSearch && matchCategory && matchRank;
+      });
+
+      tbody.innerHTML = filtered.map(tool => `
+        <tr>
+          <td><span class="rank ${rankClass(tool.rank)}">${tool.rank}</span></td>
+          <td><strong>${tool.name}</strong></td>
+          <td>${tool.company}</td>
+          <td>${tool.cats.map(cat => `<span class="tag">${cat}</span>`).join("")}</td>
+          <td>${tool.desc}</td>
+          <td><a class="btn" href="${tool.url}" target="_blank" rel="noopener noreferrer">Abrir</a></td>
+        </tr>
+      `).join("");
+    }
+
+    fillCategories();
+    renderTable();
+  </script>
+</body>
+</html>
