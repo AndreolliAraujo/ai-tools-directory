@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Diretório de 150 ferramentas de IA verificadas em 2026">
+<meta name="description" content="Diretório de 115 ferramentas de IA verificadas em 2026">
 <title>AI Tools Directory 2026</title>
 <style>
 /* ===== CSS VARIABLES ===== */
@@ -20,7 +20,6 @@
   --shadow-lg:0 25px 60px rgba(0,0,0,.3);
 }
 
-/* Dark Mode */
 .dark-mode{
   --card-bg:#0d1117;
   --text-primary:#c9d1d9;
@@ -28,7 +27,6 @@
   --border-color:#30363d;
 }
 
-/* ===== BASE ===== */
 *{box-sizing:border-box;margin:0;padding:0}
 body{
   font-family:'Segoe UI',system-ui,-apple-system,sans-serif;
@@ -39,7 +37,6 @@ body{
   max-width:1700px;margin:auto;background:var(--card-bg);padding:40px 48px;border-radius:20px;box-shadow:var(--shadow-lg)
 }
 
-/* ===== TÍTULO ===== */
 h1{
   text-align:center;font-size:2.4rem;
   background:linear-gradient(135deg,#667eea,#764ba2);
@@ -48,11 +45,11 @@ h1{
 }
 .subtitle{text-align:center;color:var(--text-secondary);margin-bottom:28px;font-size:.95rem}
 
-/* ===== STATS BAR ===== */
+/* ===== STATS BAR - MENOS DESTACADO ===== */
 .stats-bar{display:flex;gap:14px;justify-content:center;margin-bottom:24px;flex-wrap:wrap}
-.stat-chip{background:linear-gradient(135deg,#f1f5f9,#e2e8f0);padding:10px 20px;border-radius:10px;font-weight:600;font-size:.85rem;color:#334155;border:1px solid #e2e8f0;display:flex;align-items:center;gap:6px}
-.dark-mode .stat-chip{background:#161b22;border-color:#30363d;color:#c9d1d9}
-.stat-chip .num{color:var(--primary);font-size:1.1rem}
+.stat-chip{background:var(--card-bg);padding:8px 16px;border-radius:8px;font-weight:500;font-size:.85rem;color:var(--text-secondary);border:1px solid var(--border-color);display:flex;align-items:center;gap:6px}
+.dark-mode .stat-chip{background:#161b22;border-color:#30363d}
+.stat-chip .num{color:var(--primary);font-size:.95rem;font-weight:700}
 
 /* ===== CATEGORIES ===== */
 .cat-counters{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:22px}
@@ -61,7 +58,6 @@ h1{
 .cat-counter.active{border-color:var(--text-primary)}
 .cat-counter:focus{outline:2px dashed var(--primary)}
 
-/* Color Classes */
 .cat-texto{background:#dbeafe;color:#1e40af}.dark-mode .cat-texto{background:#1e293b;color:#93c5fd}
 .cat-imagem{background:#fce7f3;color:#9d174d}.dark-mode .cat-imagem{background:#4a044e;color:#fbcfe8}
 .cat-vídeo{background:#ede9fe;color:#5b21b6}.dark-mode .cat-vídeo{background:#312e81;color:#ddd6fe}
@@ -75,18 +71,15 @@ h1{
 .cat-produtividade{background:#fff7ed;color:#9a3412}.dark-mode .cat-produtividade{background:#7c2d12;color:#fed7aa}
 
 /* ===== CONTROLS ===== */
-.controls{display:flex;gap:12px;justify-content:center;margin-bottom:6px;flex-wrap:wrap}
+.controls{display:flex;gap:12px;justify-content:center;margin-bottom:6px;flex-wrap:wrap;align-items:center}
 input[type=text]{padding:11px 16px;border-radius:10px;border:2px solid var(--border-color);font-size:.9rem;width:320px;transition:border-color .2s;outline:none}
 input[type=text]:focus{border-color:var(--primary)}
 select{padding:11px 14px;border-radius:10px;border:2px solid var(--border-color);font-size:.9rem;background:#fff;cursor:pointer;outline:none;transition:border-color .2s}
 select:focus{border-color:var(--primary)}
-.search-icon{pointer-events:none;position:absolute;left:12px;top:50%;transform:translateY(-50%)}
 .input-wrapper{position:relative;flex:1;max-width:400px}
 
-/* ===== RESULT INFO ===== */
 .result-info{text-align:center;padding:8px 0 14px;font-size:.82rem;color:var(--text-secondary)}
 
-/* ===== TABLE ===== */
 .table-wrap{overflow-x:auto;border-radius:12px;border:1px solid var(--border-color)}
 table{width:100%;border-collapse:collapse;font-size:.88rem}
 thead{background:linear-gradient(135deg,#1e1b4b,#312e81);color:#fff;position:sticky;top:0}
@@ -103,7 +96,6 @@ tbody tr:nth-child(even){background:#fafbfd}
 tbody tr:nth-child(even):hover{background:#f1f5f9}
 .dark-mode tbody tr:nth-child(even):hover{background:#0d1117}
 
-/* ===== TOOL STYLES ===== */
 .tool-name{font-weight:700;color:var(--text-primary);display:flex;align-items:center;gap:6px}
 .rank-badge{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;font-size:.7rem;font-weight:800;color:#fff;flex-shrink:0}
 .rank-s{background:linear-gradient(135deg,#f59e0b,#ef4444)}.rank-a{background:linear-gradient(135deg,#6366f1,#8b5cf6)}.rank-b{background:linear-gradient(135deg,#06b6d4,#3b82f6)}.rank-c{background:#94a3b8}
@@ -116,40 +108,36 @@ tbody tr:nth-child(even):hover{background:#f1f5f9}
 
 .cost-free{color:#059669;font-weight:600}.cost-freemium{color:var(--primary);font-weight:600}.cost-paid{color:#dc2626;font-weight:600}
 
-.link-btn{display:inline-block;padding:5px 14px;background:linear-gradient(135deg,--primary,var(--primary-dark));color:#fff;text-decoration:none;border-radius:7px;font-size:.78rem;font-weight:600;transition:all .2s}
-.link-btn:hover{transform:translateY(-1px);box-shadow:0 3px 10px rgba(99,102,241,.35)}
-.link-btn:focus{outline:2px solid var(--primary)}
+/* ✅ CORREÇÃO CONTRASTE LINKS */
+.link-btn{display:inline-block;padding:5px 14px;background:linear-gradient(135deg,var(--primary),var(--primary-dark));color:#fff;text-decoration:none;border-radius:7px;font-size:.8rem;font-weight:700;transition:all .2s;box-shadow:0 2px 4px rgba(99,102,241,.3);}
+.link-btn:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(99,102,241,.5);}
+.link-btn:focus{outline:2px solid var(--primary);}
+.link-btn:focus-visible{outline:3px solid var(--primary);outline-offset:2px;}
 
 .new-badge{background:#ef4444;color:#fff;font-size:.6rem;padding:2px 6px;border-radius:4px;font-weight:700;margin-left:4px;animation:pulse 2s infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.6}}
 
-/* ===== LOADING STATE ===== */
 .loading-row *{animation:shimmer 1.5s infinite linear}
 @keyframes shimmer{0%{opacity:.3}50%{opacity:.7}100%{opacity:.3}}
 
 .empty-state{text-align:center;padding:60px 20px;color:var(--text-secondary)}
 .empty-state svg{width:80px;height:80px;opacity:.5}
 
-/* ===== PAGINATION ===== */
 .pagination{display:flex;justify-content:center;gap:8px;margin-top:20px;flex-wrap:wrap}
 .page-btn{padding:8px 16px;border:2px solid var(--border-color);background:var(--card-bg);color:var(--text-primary);border-radius:8px;cursor:pointer;font-weight:600;transition:all .2s}
 .page-btn:hover:not(:disabled){border-color:var(--primary);background:#f0f9ff}
 .page-btn:disabled{opacity:.5;cursor:not-allowed}
 .page-btn.active{background:var(--primary);border-color:var(--primary);color:#fff}
 
-/* ===== DARK MODE TOGGLE ===== */
 .theme-toggle{position:fixed;top:20px;right:20px;z-index:100;padding:12px;background:var(--card-bg);border-radius:50%;box-shadow:var(--shadow-lg);cursor:pointer;border:2px solid var(--border-color);transition:transform .2s}
 .theme-toggle:hover{transform:rotate(15deg)}
 .theme-toggle:focus{outline:2px solid var(--primary)}
 
-/* ===== FOOTER ===== */
 .footer{text-align:center;padding:20px 0 0;color:var(--text-secondary);font-size:.8rem;border-top:1px solid var(--border-color);margin-top:24px}
 
-/* ===== ANIMATIONS ===== */
 .fade-in{animation:fadeIn .3s ease-in-out}
 @keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
 
-/* ===== PRINT STYLES ===== */
 @media print{
   .controls,.footer,.theme-toggle,.cat-counters,.stats-bar,.pagination{display:none !important}
   .container{box-shadow:none;padding:10px;border-radius:0}
@@ -158,7 +146,6 @@ tbody tr:nth-child(even):hover{background:#f1f5f9}
   body{background:#fff}
 }
 
-/* ===== MOBILE ===== */
 @media(max-width:768px){
   .container{padding:20px 16px}
   input[type=text]{width:100%}
@@ -174,41 +161,53 @@ tbody tr:nth-child(even):hover{background:#f1f5f9}
 </head>
 <body>
 
-<!-- THEME TOGGLE -->
-<button class="theme-toggle" id="themeToggle" aria-label="Alternar modo escuro/claro" title="Modo Escuro/Claro">
-  🌙
-</button>
+<button class="theme-toggle" id="themeToggle" aria-label="Alternar modo escuro/claro" title="Modo Escuro/Claro">🌙</button>
 
 <div class="container">
-
 <h1>🚀 AI Tools Directory 2026</h1>
-<p class="subtitle">Diretório curado com 150 ferramentas de IA verificadas — sem duplicatas, com ranking e categorias múltiplas</p>
+<p class="subtitle">Diretório curado com <strong id="totalCountDisplay">0</strong> ferramentas de IA verificadas</p>
 
+<!-- ESTÁTICAS SEM ÍCONES E MENOS DESTAQUE -->
 <div class="stats-bar">
-  <div class="stat-chip">🛠️ Ferramentas: <span class="num" id="totalTools">0</span></div>
-  <div class="stat-chip">📂 Categorias: <span class="num" id="totalCats">0</span></div>
-  <div class="stat-chip">🆕 Emergentes: <span class="num" id="totalNew">0</span></div>
-  <div class="stat-chip">🆓 Gratuitas: <span class="num" id="totalFree">0</span></div>
-  <div class="stat-chip">📅 Atualizado: Mar 2026</div>
+  <div class="stat-chip">Ferramentas: <span class="num" id="totalTools">0</span></div>
+  <div class="stat-chip">Categorias: <span class="num" id="totalCats">0</span></div>
+  <div class="stat-chip">Emergentes: <span class="num" id="totalNew">0</span></div>
+  <div class="stat-chip">Gratuitas: <span class="num" id="totalFree">0</span></div>
+  <div class="stat-chip">Atualizado: Mar 2026</div>
 </div>
 
 <div class="cat-counters" id="catCounters" role="group" aria-label="Filtro por categoria"></div>
 
+<!-- FILTROS REORGANIZADOS - TODOS EM PRIMEIRO -->
 <div class="controls">
   <div class="input-wrapper">
     <input type="text" id="search" placeholder="🔍 Buscar ferramenta, empresa, descrição..." oninput="filterTable()" aria-label="Buscar no diretório">
   </div>
+  
+  <!-- ✅ TODOS MOVIDO PARA PRIMEIRO LUGAR -->
   <select id="catFilter" onchange="filterTable()" aria-label="Filtrar por categoria">
-    <option value="">Todas categorias</option>
+    <option value="">🏷️ Todos</option>
+    <option value="Áudio">Áudio</option>
+    <option value="Automação">Automação</option>
+    <option value="Código">Código</option>
+    <option value="Dev">Dev</option>
+    <option value="Escrita">Escrita</option>
+    <option value="Imagem">Imagem</option>
+    <option value="Pesquisa">Pesquisa</option>
+    <option value="Produtividade">Produtividade</option>
+    <option value="Texto">Texto</option>
+    <option value="Vídeo">Vídeo</option>
+    <option value="3D">3D</option>
   </select>
+  
   <select id="costFilter" onchange="filterTable()" aria-label="Filtrar por custo">
-    <option value="">Todos custos</option>
+    <option value="">💰 Todos custos</option>
     <option value="Gratuito">Gratuito</option>
     <option value="Freemium">Freemium</option>
     <option value="Pago">Pago</option>
   </select>
   <select id="rankFilter" onchange="filterTable()" aria-label="Filtrar por ranking">
-    <option value="">Todos rankings</option>
+    <option value="">⭐ Todos rankings</option>
     <option value="S">🏆 S-Tier</option>
     <option value="A">⭐ A-Tier</option>
     <option value="B">🔷 B-Tier</option>
@@ -239,20 +238,18 @@ tbody tr:nth-child(even):hover{background:#f1f5f9}
 
 <div class="footer">
   AI Tools Directory 2026 — Dados verificados de fontes públicas. Links oficiais revisados.<br>
-  <span style="opacity:.7">Versão 2.0 | Suporte Acessível | Dark Mode</span>
+  <span style="opacity:.7">Versão 2.2 | Paginação Corrigida | Dark Mode | Contraste Otimizado</span>
 </div>
-
 </div>
 
 <script>
 /**
  * ===========================================
- * AI TOOLS DIRECTORY 2026 - Versão 2.0
- * Com Melharias: Acessibilidade, Performance, Segurança
+ * AI TOOLS DIRECTORY 2026 - Versão 2.2
+ * Melhorias Visuais Implementadas ✅
  * ===========================================
  */
 
-// ===== VALIDATION & ERROR HANDLING =====
 class DataManager {
   static validateTool(tool){
     if(!tool || typeof tool !== 'object') return false;
@@ -269,9 +266,7 @@ class DataManager {
   }
 }
 
-// ===== DATABASE: 150 ferramentas ÚNICAS =====
 const tools = [
-// ─── TEXTO / LLM ───
 {name:"ChatGPT",company:"OpenAI",cats:["Texto","Código","Pesquisa"],desc:"Assistente multimodal líder com GPT-4o, voz, imagem e vídeo",cost:"Freemium",url:"https://chat.openai.com",rank:"S",isNew:false},
 {name:"Claude",company:"Anthropic",cats:["Texto","Código"],desc:"Análise profunda de documentos, 200K tokens de contexto, Artifacts UI",cost:"Freemium",url:"https://claude.ai",rank:"S",isNew:false},
 {name:"Gemini",company:"Google",cats:["Texto","Imagem","Vídeo"],desc:"Assistente multimodal integrado ao Google Workspace",cost:"Freemium",url:"https://gemini.google.com",rank:"S",isNew:false},
@@ -286,8 +281,6 @@ const tools = [
 {name:"Cohere Command",company:"Cohere",cats:["Texto","Dev"],desc:"LLM empresarial com RAG nativo e segurança corporativa",cost:"Freemium",url:"https://cohere.com",rank:"B",isNew:false},
 {name:"Yi Chat",company:"01.AI",cats:["Texto"],desc:"LLM bilíngue chinês/inglês de alta capacidade",cost:"Gratuito",url:"https://www.01.ai",rank:"C",isNew:false},
 {name:"Reka",company:"Reka AI",cats:["Texto","Imagem"],desc:"Modelo multimodal nativo com compreensão visual",cost:"Freemium",url:"https://chat.reka.ai",rank:"C",isNew:true},
-
-// ─── PESQUISA ───
 {name:"Perplexity",company:"Perplexity AI",cats:["Pesquisa","Texto"],desc:"Motor de busca com IA, citações em tempo real, Comet browser",cost:"Freemium",url:"https://perplexity.ai",rank:"S",isNew:false},
 {name:"NotebookLM",company:"Google",cats:["Pesquisa","Texto"],desc:"Análise e perguntas sobre seus próprios documentos",cost:"Gratuito",url:"https://notebooklm.google.com",rank:"A",isNew:false},
 {name:"Kimi",company:"Moonshot AI",cats:["Pesquisa","Texto"],desc:"Pesquisa profunda com janela de contexto de 2M tokens",cost:"Gratuito",url:"https://kimi.ai",rank:"B",isNew:false},
@@ -295,8 +288,6 @@ const tools = [
 {name:"Phind",company:"Phind",cats:["Pesquisa","Código"],desc:"Motor de busca otimizado para desenvolvedores",cost:"Freemium",url:"https://phind.com",rank:"B",isNew:false},
 {name:"Exa",company:"Exa AI",cats:["Pesquisa","Dev"],desc:"API de busca semântica para aplicações de IA",cost:"Freemium",url:"https://exa.ai",rank:"B",isNew:true},
 {name:"Tavily",company:"Tavily",cats:["Pesquisa","Dev"],desc:"API de pesquisa otimizada para agentes de IA",cost:"Freemium",url:"https://tavily.com",rank:"C",isNew:true},
-
-// ─── IMAGEM ───
 {name:"Midjourney",company:"Midjourney",cats:["Imagem"],desc:"Geração artística de altíssima qualidade, referência no setor",cost:"Pago",url:"https://midjourney.com",rank:"S",isNew:false},
 {name:"DALL·E 3",company:"OpenAI",cats:["Imagem"],desc:"Geração de imagens integrada ao ChatGPT, excelente com texto",cost:"Freemium",url:"https://openai.com/dall-e-3",rank:"A",isNew:false},
 {name:"Ideogram",company:"Ideogram",cats:["Imagem"],desc:"Melhor gerador de imagens com texto legível",cost:"Freemium",url:"https://ideogram.ai",rank:"A",isNew:false},
@@ -311,8 +302,6 @@ const tools = [
 {name:"Magnific AI",company:"Magnific",cats:["Imagem"],desc:"Upscaling e aprimoramento de imagens com detalhes IA",cost:"Pago",url:"https://magnific.ai",rank:"B",isNew:true},
 {name:"Recraft",company:"Recraft",cats:["Imagem"],desc:"Design vetorial e de imagens com controle de estilo preciso",cost:"Freemium",url:"https://recraft.ai",rank:"B",isNew:true},
 {name:"Freepik Pikaso",company:"Freepik",cats:["Imagem"],desc:"Geração de imagens em tempo real enquanto desenha",cost:"Freemium",url:"https://freepik.com/pikaso",rank:"B",isNew:true},
-
-// ─── VÍDEO ───
 {name:"Sora",company:"OpenAI",cats:["Vídeo"],desc:"Geração de vídeo cinematográfico de alta fidelidade",cost:"Pago",url:"https://sora.com",rank:"S",isNew:false},
 {name:"Runway Gen-4",company:"Runway",cats:["Vídeo","Imagem"],desc:"Geração e edição de vídeo com consistência de estilo",cost:"Freemium",url:"https://runwayml.com",rank:"S",isNew:false},
 {name:"Veo 2",company:"Google DeepMind",cats:["Vídeo"],desc:"Vídeo cinematográfico de alta qualidade do Google",cost:"Pago",url:"https://deepmind.google/technologies/veo",rank:"A",isNew:false},
@@ -327,8 +316,6 @@ const tools = [
 {name:"Minimax/Hailuo",company:"MiniMax",cats:["Vídeo"],desc:"Geração de vídeo chinês com movimentos naturais impressionantes",cost:"Freemium",url:"https://hailuoai.video",rank:"B",isNew:true},
 {name:"Higgsfield",company:"Higgsfield AI",cats:["Vídeo","Imagem"],desc:"Agregador criativo de modelos IA para imagem e vídeo",cost:"Freemium",url:"https://higgsfield.ai",rank:"B",isNew:true},
 {name:"Haiper",company:"Haiper AI",cats:["Vídeo"],desc:"Geração de vídeo rápida com animações expressivas",cost:"Freemium",url:"https://haiper.ai",rank:"C",isNew:true},
-
-// ─── ÁUDIO / MÚSICA / VOZ ───
 {name:"ElevenLabs",company:"ElevenLabs",cats:["Áudio","Dev"],desc:"Clonagem e geração de voz ultra-realista, líder TTS",cost:"Freemium",url:"https://elevenlabs.io",rank:"S",isNew:false},
 {name:"Suno v4",company:"Suno",cats:["Áudio"],desc:"Criação de músicas completas com vocal por prompt de texto",cost:"Freemium",url:"https://suno.com",rank:"A",isNew:false},
 {name:"Udio",company:"Udio",cats:["Áudio"],desc:"Geração de música por IA com controle de estilo avançado",cost:"Freemium",url:"https://udio.com",rank:"A",isNew:false},
@@ -340,8 +327,6 @@ const tools = [
 {name:"Soundraw",company:"Soundraw",cats:["Áudio"],desc:"Música generativa personalizável para criadores de conteúdo",cost:"Freemium",url:"https://soundraw.io",rank:"B",isNew:false},
 {name:"Voicemod",company:"Voicemod",cats:["Áudio"],desc:"Transformação e efeitos de voz em tempo real",cost:"Freemium",url:"https://voicemod.net",rank:"C",isNew:false},
 {name:"NotebookLM Audio",company:"Google",cats:["Áudio","Pesquisa"],desc:"Gera podcasts automáticos dos seus documentos",cost:"Gratuito",url:"https://notebooklm.google.com",rank:"A",isNew:true},
-
-// ─── CÓDIGO / DESENVOLVIMENTO ───
 {name:"Cursor",company:"Anysphere",cats:["Código"],desc:"Editor IA nativo com Agent Mode que edita projetos inteiros",cost:"Freemium",url:"https://cursor.com",rank:"S",isNew:false},
 {name:"GitHub Copilot",company:"GitHub/Microsoft",cats:["Código"],desc:"Autocompletar e agente de código integrado ao VS Code",cost:"Pago",url:"https://github.com/features/copilot",rank:"S",isNew:false},
 {name:"Replit Agent",company:"Replit",cats:["Código","Dev"],desc:"IDE na nuvem com agente IA que cria apps completas",cost:"Freemium",url:"https://replit.com",rank:"A",isNew:false},
@@ -356,11 +341,7 @@ const tools = [
 {name:"Claude Code",company:"Anthropic",cats:["Código","Dev"],desc:"Agente de terminal que programa e executa código autonomamente",cost:"Pago",url:"https://docs.anthropic.com/en/docs/claude-code",rank:"A",isNew:true},
 {name:"Devin",company:"Cognition AI",cats:["Código","Automação"],desc:"Primeiro engenheiro de software IA autônomo",cost:"Pago",url:"https://devin.ai",rank:"B",isNew:true},
 {name:"Aider",company:"Open Source",cats:["Código","Dev"],desc:"Assistente de pair programming IA no terminal",cost:"Gratuito",url:"https://aider.chat",rank:"B",isNew:true},
-
-// ─── EMERGENTES / DIFFUSION LLM ───
 {name:"Inception Mercury",company:"Inception Labs",cats:["Código","Dev"],desc:"DLM por difusão: 10x mais rápido que LLMs tradicionais, 1000 tok/s",cost:"Freemium",url:"https://inceptionlabs.ai",rank:"A",isNew:true},
-
-// ─── AUTOMAÇÃO / AGENTES ───
 {name:"n8n",company:"n8n",cats:["Automação","Dev"],desc:"Plataforma open source de workflows com IA integrada",cost:"Gratuito",url:"https://n8n.io",rank:"S",isNew:false},
 {name:"Zapier AI",company:"Zapier",cats:["Automação","Produtividade"],desc:"8000+ integrações com Copilot, Agents e IA nativa",cost:"Freemium",url:"https://zapier.com",rank:"S",isNew:false},
 {name:"Make",company:"Make",cats:["Automação"],desc:"Automação visual sofisticada com cenários complexos",cost:"Freemium",url:"https://make.com",rank:"A",isNew:false},
@@ -373,8 +354,6 @@ const tools = [
 {name:"Dust",company:"Dust",cats:["Automação","Produtividade"],desc:"Agentes IA corporativos conectados aos dados da empresa",cost:"Pago",url:"https://dust.tt",rank:"B",isNew:false},
 {name:"Relevance AI",company:"Relevance AI",cats:["Automação"],desc:"Plataforma no-code para criar e gerenciar agentes IA",cost:"Freemium",url:"https://relevanceai.com",rank:"B",isNew:true},
 {name:"Composio",company:"Composio",cats:["Automação","Dev"],desc:"150+ integrações de ferramentas para agentes de IA",cost:"Freemium",url:"https://composio.dev",rank:"C",isNew:true},
-
-// ─── DEV / INFRAESTRUTURA ───
 {name:"OpenRouter",company:"OpenRouter",cats:["Dev"],desc:"Gateway unificado para 100+ LLMs com uma única API",cost:"Freemium",url:"https://openrouter.ai",rank:"A",isNew:false},
 {name:"LM Studio",company:"LM Studio",cats:["Dev"],desc:"Rodar modelos open source localmente com GUI intuitiva",cost:"Gratuito",url:"https://lmstudio.ai",rank:"A",isNew:false},
 {name:"Ollama",company:"Ollama",cats:["Dev"],desc:"Rodar LLMs localmente via terminal, fácil e leve",cost:"Gratuito",url:"https://ollama.com",rank:"A",isNew:false},
@@ -388,46 +367,29 @@ const tools = [
 {name:"Vercel AI SDK",company:"Vercel",cats:["Dev","Código"],desc:"SDK TypeScript para integrar IA em apps web facilmente",cost:"Gratuito",url:"https://sdk.vercel.ai",rank:"B",isNew:false},
 {name:"Weights & Biases",company:"W&B",cats:["Dev"],desc:"MLOps: tracking de experimentos, avaliação e deploy",cost:"Freemium",url:"https://wandb.ai",rank:"A",isNew:false},
 {name:"LiteLLM",company:"Open Source",cats:["Dev"],desc:"Proxy unificado para chamar 100+ LLMs com formato OpenAI",cost:"Gratuito",url:"https://litellm.ai",rank:"B",isNew:true},
-
-// ─── ESCRITA / CONTEÚDO ───
 {name:"Jasper",company:"Jasper AI",cats:["Escrita","Produtividade"],desc:"Criação de conteúdo de marketing com IA e templates",cost:"Pago",url:"https://jasper.ai",rank:"B",isNew:false},
 {name:"Copy.ai",company:"Copy.ai",cats:["Escrita","Automação"],desc:"Copywriting e workflows de GTM automatizados por IA",cost:"Freemium",url:"https://copy.ai",rank:"B",isNew:false},
 {name:"Writesonic",company:"Writesonic",cats:["Escrita","Pesquisa"],desc:"Geração de conteúdo SEO e artigos com busca integrada",cost:"Freemium",url:"https://writesonic.com",rank:"B",isNew:false},
 {name:"Grammarly",company:"Grammarly",cats:["Escrita","Produtividade"],desc:"Correção gramatical, estilo e reescrita com IA avançada",cost:"Freemium",url:"https://grammarly.com",rank:"A",isNew:false},
 {name:"Notion AI",company:"Notion",cats:["Escrita","Produtividade"],desc:"IA integrada ao Notion para escrever, resumir e organizar",cost:"Freemium",url:"https://notion.so",rank:"A",isNew:false},
 {name:"Gamma",company:"Gamma",cats:["Escrita","Imagem"],desc:"Cria apresentações, documentos e sites por prompt",cost:"Freemium",url:"https://gamma.app",rank:"A",isNew:false},
-
-// ─── PRODUTIVIDADE ───
 {name:"Otter.ai",company:"Otter.ai",cats:["Produtividade","Áudio"],desc:"Transcrição de reuniões em tempo real com resumos IA",cost:"Freemium",url:"https://otter.ai",rank:"A",isNew:false},
 {name:"tl;dv",company:"tl;dv",cats:["Produtividade","Áudio"],desc:"Grava e resume reuniões do Google Meet e Zoom",cost:"Freemium",url:"https://tldv.io",rank:"B",isNew:false},
 {name:"Mem",company:"Mem",cats:["Produtividade","Texto"],desc:"Notas inteligentes que se auto-organizam com IA",cost:"Freemium",url:"https://mem.ai",rank:"C",isNew:false},
 {name:"Reclaim AI",company:"Reclaim",cats:["Produtividade","Automação"],desc:"Agenda inteligente que otimiza seu calendário com IA",cost:"Freemium",url:"https://reclaim.ai",rank:"B",isNew:false},
 {name:"Napkin AI",company:"Napkin",cats:["Produtividade","Imagem"],desc:"Transforma texto em diagramas e visuais profissionais",cost:"Freemium",url:"https://napkin.ai",rank:"B",isNew:true},
-
-// ─── 3D ───
 {name:"Meshy",company:"Meshy",cats:["3D","Imagem"],desc:"Geração de modelos 3D por texto ou imagem com textura",cost:"Freemium",url:"https://meshy.ai",rank:"B",isNew:true},
 {name:"Tripo AI",company:"Tripo",cats:["3D"],desc:"Cria modelos 3D de alta qualidade a partir de imagens",cost:"Freemium",url:"https://tripo3d.ai",rank:"B",isNew:true},
 {name:"Spline AI",company:"Spline",cats:["3D","Código"],desc:"Design 3D colaborativo no browser com geração por IA",cost:"Freemium",url:"https://spline.design",rank:"B",isNew:false},
 {name:"CSM AI",company:"CSM",cats:["3D","Dev"],desc:"World engine: gera mundos 3D interativos com IA",cost:"Freemium",url:"https://csm.ai",rank:"C",isNew:true},
 ];
 
-// ===== INITIAL VALIDATION =====
-(function initValidation(){
-  const invalid = tools.filter(t => !DataManager.validateTool(t));
-  if(invalid.length > 0){
-    console.error("❌ Ferramentas inválidas encontradas:", invalid.map(i=>i.name));
-    alert("Alerta: Alguns dados precisam ser corrigidos.");
-  }
-  // Sanitize URLs
-  tools.forEach(t => t.url = DataManager.sanitizeURL(t.url));
-})();
-
-// ===== SORTING LOGIC =====
 const rankOrder = {S:0,A:1,B:2,C:3};
 let sortCol = 0, sortAsc = true;
 let activeCatFilter = "";
 let currentPage = 1;
 const ITEMS_PER_PAGE = 30;
+let currentSortedData = [];
 
 function getAllCategories(){
   const s = new Set();
@@ -456,8 +418,9 @@ function buildCatCounters(){
   });
   
   const sel = document.getElementById("catFilter");
-  sel.innerHTML = '<option value="">Todas categorias</option>';
-  cats.forEach(c=>{sel.innerHTML+=`<option value="${c}">${c} (${counts[c]})</option>`});
+  // Mantendo estrutura original de opções, apenas alterando ordem visual no HTML
+  sel.innerHTML = '<option value="">🏷️ Todos</option>';
+  cats.forEach(c=>{sel.innerHTML+=`<option value="${c}">${c}</option>`});
 }
 
 function setCatFilter(c){
@@ -468,7 +431,6 @@ function setCatFilter(c){
   filterTable();
 }
 
-// ===== ROW RENDERING WITH SANITIZATION =====
 function renderRow(t){
   const rankClass = `rank-${t.rank.toLowerCase()}`;
   const tags = t.cats.map(c=>`<span class="tag tag-${c.toLowerCase()}" title="${c}">${c}</span>`).join("");
@@ -487,7 +449,6 @@ function renderRow(t){
   </tr>`;
 }
 
-// ===== PAGINATION SYSTEM =====
 function renderPagination(totalItems){
   const totalPages = Math.ceil(totalItems / ITEMS_PER_PAGE);
   const paginationEl = document.getElementById("pagination");
@@ -498,10 +459,8 @@ function renderPagination(totalItems){
   }
   
   let html = '';
-  // Back button
-  html += `<button class="page-btn" onclick="goToPage(${currentPage-1})" ${currentPage===1?'disabled':''}>← Anterior</button>`;
+  html += `<button class="page-btn" onclick="goToPage(${currentPage-1})" ${currentPage===1?'disabled':''} aria-label="Página anterior">← Anterior</button>`;
   
-  // Page numbers
   for(let i=1;i<=totalPages;i++){
     if(i===1||i===totalPages||(i>=currentPage-1&&i<=currentPage+1)){
       html += `<button class="page-btn ${i===currentPage?'active':''}" 
@@ -512,25 +471,24 @@ function renderPagination(totalItems){
     }
   }
   
-  // Forward button
-  html += `<button class="page-btn" onclick="goToPage(${currentPage+1})" ${currentPage===totalPages?'disabled':''}>Próxima →</button>`;
+  html += `<button class="page-btn" onclick="goToPage(${currentPage+1})" ${currentPage===totalPages?'disabled':''} aria-label="Próxima página">Próxima →</button>`;
   
   paginationEl.innerHTML = html;
 }
 
 function goToPage(page){
-  if(page<1||page>Math.ceil(document.getElementById("tbody").parentElement.querySelector('tbody').rows.length/ITEMS_PER_PAGE)) return;
+  const totalPages = Math.ceil(currentSortedData.length / ITEMS_PER_PAGE);
+  if(page<1||page>totalPages||page===currentPage) return;
   currentPage = page;
   filterTable();
   document.getElementById("pagination").scrollIntoView({behavior:"smooth"});
 }
 
-// ===== MAIN FILTER FUNCTION WITH PAGINATION =====
 function filterTable(){
   const data = getFilteredData();
   const sortedData = sortData(data);
+  currentSortedData = sortedData;
   
-  // Pagination logic
   const start = (currentPage-1)*ITEMS_PER_PAGE;
   const end = start + ITEMS_PER_PAGE;
   const paginatedData = sortedData.slice(start, end);
@@ -597,17 +555,15 @@ function sortTable(col){
   if(sortCol===col) sortAsc=!sortAsc;
   else {sortCol=col;sortAsc=true;}
   
-  // Update aria-sort attribute
   document.querySelectorAll('th[role="columnheader"]').forEach((th,i)=>{
     th.setAttribute('aria-sort', i===col?(sortAsc?'ascending':'descending'):'none');
   });
   
+  currentPage = 1;
   filterTable();
 }
 
-// ===== ACCESSIBILITY ENHANCEMENTS =====
 document.addEventListener('DOMContentLoaded',()=>{
-  // Keyboard navigation for sort headers
   document.querySelectorAll('th[onclick]').forEach(th=>{
     th.addEventListener('keypress',e=>{
       if(e.key==='Enter'||e.key===' '){e.preventDefault();th.click();}
@@ -615,15 +571,14 @@ document.addEventListener('DOMContentLoaded',()=>{
   });
 });
 
-// ===== STATS UPDATE =====
 function updateStats(){
   document.getElementById("totalTools").textContent = tools.length;
   document.getElementById("totalCats").textContent = getAllCategories().length;
   document.getElementById("totalNew").textContent = tools.filter(t=>t.isNew).length;
   document.getElementById("totalFree").textContent = tools.filter(t=>t.cost==="Gratuito").length;
+  document.getElementById("totalCountDisplay").textContent = tools.length;
 }
 
-// ===== DARK MODE IMPLEMENTATION =====
 function initDarkMode(){
   const toggle = document.getElementById("themeToggle");
   const savedMode = localStorage.getItem("ai-directory-theme") || "light";
@@ -641,33 +596,11 @@ function initDarkMode(){
     applyTheme(isDark?"light":"dark");
   });
   
-  // System preference detection
   if(window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches && !localStorage.getItem("ai-directory-theme")){
     applyTheme("dark");
   }
 }
 
-// ===== STORAGE CACHE (Optimized Version) =====
-async function cacheResults(filterKey, data){
-  try{
-    const db = await caches.open("ai-directory-v2");
-    const response = new Response(JSON.stringify({data,timestamp:Date.now()}));
-    await db.put(filterKey, response);
-  }catch(e){console.warn("Cache não disponível:",e);}
-}
-
-// ===== INITIALIZATION =====
-(function init(){
-  initDarkMode();
-  buildCatCounters();
-  updateStats();
-  filterTable();
-  
-  // Focus trap prevention for screen readers
-  document.getElementById("search").focus();
-})();
-
-// ===== EXPORT FUNCTION FOR DEBUGGING =====
 window.exportToolsJSON = () => {
   const blob = new Blob([JSON.stringify(tools,null,2)],{type:"application/json"});
   const a = document.createElement("a");
@@ -675,7 +608,14 @@ window.exportToolsJSON = () => {
   a.download = "ai-tools-2026.json";
   a.click();
 };
-</script>
 
+(function init(){
+  initDarkMode();
+  buildCatCounters();
+  updateStats();
+  filterTable();
+  document.getElementById("search").focus();
+})();
+</script>
 </body>
 </html>
